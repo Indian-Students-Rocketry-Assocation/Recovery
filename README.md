@@ -1,56 +1,51 @@
-# Recovery 
+# Recovery
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 ![Status](https://img.shields.io/badge/status-active-green.svg)
 
-Design logs, calculations, and flight records for our parachute systems and ejection mechanisms. Every rocket we build has to come back down safely — this repo documents how we make that happen, mission by mission.
+Design logs, calculations, test and flight records for the parachute and ejection systems of the Indian Students Rocketry Association's rockets. Every rocket we build has to come back down safely; this repo documents how we try to make that happen, mission by mission.
 
-We share this openly because recovery is one of the least-documented aspects of student rocketry. A lot of teams figure out motors and avionics from available resources, then lose the rocket on descent anyway. We want to change that.
+We share this openly because recovery is one of the least-documented parts of student rocketry. A lot of teams figure out motors and avionics, then lose the rocket on descent anyway.
 
-We're a student rocketry association from Anand, Gujarat, building towards 100 km — one mission at a time.
+We're a student rocketry association from Anand, Gujarat, building towards 100 km, one mission at a time.
 
 ---
 
-## What's in here
+## Missions
+
+A **mission** is one rocket. Mission numbers match the [Propulsion](https://github.com/Indian-Students-Rocketry-Assocation/Propulsion) and [Electronics](https://github.com/Indian-Students-Rocketry-Assocation/Electronics) repos.
+
+| Mission | Rocket | Status | Recovery |
+|---|---|---|---|
+| M001-SRM | SRM | Flew 2024-10-20. Motor exploded on ignition | Not recorded |
+| M002-HomiSI | Homi Shatam I | Flew 2025-03-11. Motor exploded within 1 s | Not recorded |
+| M003-HomiSII | Homi Shatam II | In development, not yet flown | Servo ejection at apogee (MG90S, flight computer in [Electronics](https://github.com/Indian-Students-Rocketry-Assocation/Electronics/tree/main/Missions/M003-HomiSII)). Never tested with a packed chute |
+
+**Nothing is committed here yet.** No recovery records survive from M001 or M002, and the M003 parachute and ejection mechanism are not yet documented. Mission folders will be added as that work is written up.
+
+## Layout
 
 ```
-recovery/
-├── missions/
-│   ├── M001-HomiSII/
-│   │   ├── parachute/
-│   │   │   ├── design.md              # Sizing calculations, material, Cd values used
-│   │   │   ├── deployment-tests.md    # Ground deployment tests before flight
-│   │   │   └── flight-log.md          # How recovery actually performed
-│   │   ├── ejection-system/
-│   │   │   ├── design.md              # Mechanism design, spring/piston specs, shear pin sizing, release trigger
-│   │   │   ├── ground-tests.md        # Actuation tests, deployment force measurements, release threshold tests
-│   │   │   └── flight-log.md          # Deployment altitude, mechanism condition post-flight, recovery outcome
-│   │   └── M001-recovery-summary.md   # Overall outcome — what worked, what didn't
-│   └── M002/
-└── resources/
-    ├── parachute-sizing/              # Sizing methodology and Cd values we use
-    ├── packing-procedure/             # How we fold and pack chutes, step by step
-    └── safety-protocols/              # Ejection system handling protocols
+Missions/
+  M00N-<Rocket>/
+    README.md            mission overview: what flew, what happened
+    Parachute/           sizing, material, Cd used, deployment tests
+    Ejection/            mechanism design, ground tests
+Resources/
+  ParachuteSizing/       sizing method and the Cd values we use
+  Packing/               how we fold and pack chutes
 ```
+
+Each mission `README.md` should say honestly what was tested, what wasn't, and what happened in flight.
+
+---
 
 ## Contributing
 
-Recovery has more edge cases than any other system on the rocket. Small details in packing technique, charge sizing, and deployment timing matter enormously — and most of them are learned the hard way. If you've solved a problem we're still working through, or have data that would sharpen our methodology, we'd genuinely like to hear from you.
+Recovery has more edge cases than any other system on the rocket. Small details in packing, deployment timing and mechanism design matter, and most of them are learned the hard way. If you've solved a problem we're still working through, we'd like to hear from you.
 
-[💬 Discussions](../../discussions)
-
----
+[💬 Discussions](../../discussions) · [🔗 All ISRA repos](https://github.com/Indian-Students-Rocketry-Assocation)
 
 ## License
 
-This work is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
-
-You are free to use, adapt, and build upon this documentation for any purpose as long as you give appropriate credit to [Association Name]. See [LICENSE](LICENSE) for full terms.
-
----
-
-## About Us
-
-We're a student rocketry association from Anand, Gujarat. This repository is part of our commitment to open-source rocketry education. Everything we learn, we share.
-
-[🔗 All Repos](https://github.com/[org-name]) · [💬 Discussions](../../discussions)
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): use, adapt and build on this for any purpose, with credit to the Indian Students Rocketry Association. See [LICENSE](LICENSE).
